@@ -1,0 +1,11 @@
+input {
+    text-align: center;
+}
+
+.material-symbols-outlined {
+    cursor: pointer;
+}
+
+::placeholder {
+    text-align: center;
+}

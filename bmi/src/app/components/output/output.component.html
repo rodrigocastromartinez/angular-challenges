@@ -1,0 +1,10 @@
+<div class="flex flex-col gap-4 items-center justify-center h-screen">
+    <h1 class="text-3xl">Result</h1>
+    <div class="flex gap-4 w-3/5">
+        <button class="bg-red-200 p-12 w-full">
+            <p class="text-5xl">{{ bmi }}</p>
+            <p>{{ message }}</p>
+        </button>
+    </div>
+    <button (click)="goBack()" class="bg-orange-200 p-4 w-3/5">Back</button>
+</div>
