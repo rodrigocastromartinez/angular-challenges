@@ -12,10 +12,11 @@ export class ListComponent {
     {id: 2, name: "Mary", lastName: "Jane", sex: "Female", salary: 25000},
     {id: 3, name: "Rod", lastName: "Stewe", sex: "Male", salary: 22500},
     {id: 4, name: "Meredith", lastName: "Crank", sex: "Female", salary: 21000},
-    {id: 5, name: "Creed", lastName: "Rocks", sex: "Male", salary: 19000}
+    {id: 5, name: "Creed", lastName: "Rocks", sex: "Male", salary: 19000},
+    {id: 6, name: "Alex", lastName: "Lamas", sex: "Male", salary: 19900}
   ]
 
-  filter: string = 'all'
+  filter = 'all'
 
   constructor() {
 
@@ -31,5 +32,9 @@ export class ListComponent {
 
   countFemales() {
     return this.employeesList.filter(employee => employee.sex === "Female").length
+  }
+
+  onFilterChanged(filter: string) {
+    this.filter = filter
   }
 }
