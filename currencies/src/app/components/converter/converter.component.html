@@ -1,0 +1,28 @@
+<div class="container mt-4 d-flex flex-column justify-content-center">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="mb-3 d-flex flex-column justify-content-center align-items-center">
+                <label for="quantity" class="form-label text-light">Convert:</label>
+                <input type="number" class="form-control" id="quantity" placeholder="Insert quantity" [(ngModel)]="input" (input)="convert()">
+              </div>
+        </div>
+    </div>
+    <div class="row d-flex flex-row">
+        <div class="col-lg-6">
+            <label for="from" class="form-label text-light">From:</label>
+            <select class="form-select" id="from" [(ngModel)]="inputCurrency" (change)="convert()" >
+                <option *ngFor="let currency of currencies">{{currency}}</option>
+              </select>
+        </div>
+        <div class="col-lg-6">
+            <label for="to" class="form-label text-light">To:</label>
+            <select class="form-select" id="to" [(ngModel)]="outputCurrency" (change)="convert()" >
+                <option *ngFor="let currency of currencies">{{currency}}</option>
+              </select>
+        </div>
+    </div>
+    <h5 *ngIf="input > 0" class="text-center mt-4 d-flex flex-row justify-content-center gap-2">
+        <span class="badge bg-secondary fs-2">Result: </span>
+        <span class="badge bg-success fs-2">{{ output | number: '0.0-2' }} {{ outputCurrency }}</span>
+    </h5>
+</div>
